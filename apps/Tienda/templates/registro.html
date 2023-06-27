@@ -1,0 +1,60 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    
+    <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container mt-5">
+    <form class="formLogin p-5" id="registroForm" action="/registroForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <h3 class="mb-3">Registro</h3>
+
+            <div class="col mt-3">
+                <label for="txtNombre">Nombre:</label>
+                <input name="txtNombre" id="txtNombre" type="text" placeholder="Ingrese su nombre" class="form-control">
+            </div>
+
+            <div class="col mt-3">
+              <label for="txtUsuario">Usuario:</label>
+              <input name="txtUsuario" id="txtUsuario" type="text" placeholder="Ingrese su usuario" class="form-control">
+           </div>
+  
+            <div class="col mt-3">
+                <label for="txtCorreo">Correo:</label>
+                <input name="txtCorreo" id="txtCorreo" type="text" placeholder="Ingrese su correo" class="form-control">
+            </div>
+            <div class="col mt-3">
+                <label for="txtCCorreo">Confirme Correo:</label>
+                <input name="txtCCorreo" id="txtCCorreo" type="text" placeholder="Confirme su correo" class="form-control">
+            </div>
+
+            <div class="col mt-3"">
+              <label for="txtContraseña">Contraseña:</label>
+              <input name="txtContraseña" id="txtContraseña" type="password" placeholder="Ingrese su contraseña" class="form-control">
+              </div>
+
+              <div class="col mt-3"">
+                <label for="txtCContraseña">Confirme Contraseña:</label>
+                <input name="txtCContraseña" id="txtCContraseña" type="password" placeholder="Confirme su contraseña" class="form-control">
+                </div>
+                <div class="botonIngreso mt-4 d-flex">
+                <button type="submit" class="btn btn-outline-dark d-flex">Registrar</button>
+                <a href="login.html" style="color: black">    
+                  <label class="labellogin">Ya tienes cuenta?</label>
+                </a>
+                </div>
+        </form>
+    </div>
+
+    
+    
+{% endblock %}
+
+
+{% block script %}
+    
+{% endblock %}

@@ -1,0 +1,234 @@
+html{
+    max-width: 1080;
+}
+.nav{
+    width: 100%;
+    background: rgb(253,253,150);
+background: linear-gradient(90deg, rgba(253,253,150,1) 0%, rgba(255,255,200,1) 50%, rgba(253,253,150,1) 100%);
+    
+}
+ul{
+    align-items: center;
+}
+.top{
+    background: rgb(253,253,150);
+background: linear-gradient(90deg, rgba(253,253,150,1) 0%, rgba(255,255,200,1) 50%, rgba(253,253,150,1) 100%);
+
+}
+.containerFoot{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    background: rgb(253,253,150);
+background: linear-gradient(90deg, rgba(253,253,150,1) 0%, rgba(255,255,200,1) 50%, rgba(253,253,150,1) 100%);
+}
+
+img{
+    width: 85px;
+    height: 85px;
+
+}
+.imgcar{
+    width: 100%;
+    height: auto;
+}
+.titulo{
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    height: 75px;
+}
+
+
+.contenedorHeader{
+    background-color: aliceblue;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: ROW;
+    justify-content:center;
+}
+.contenedorHeader a{
+    padding-top: 35px;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background: rgb(253,253,150);
+background: linear-gradient(90deg, rgba(253,253,150,1) 0%, rgba(255,255,200,1) 50%, rgba(253,253,150,1) 100%);
+}
+
+.contenedorHeader a:hover{
+    font-size: 25px;
+    transition: 500ms;
+}
+
+.contenedor{
+    background-color: aliceblue;
+    height: 600px;
+    margin-left: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-right: 100px;
+    margin-bottom: 25px;
+    
+}
+.contenedor h2{
+    text-align: center;
+}
+.contenedorInput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.contenedorInput input{
+    height: 20px;
+    width: 300px;
+    
+}
+
+.contenedorFooter{
+    /* border: solid; */
+    height: 200px;  
+    display: flex;
+    flex-direction: row;
+    background-color: lightgray;
+    
+}
+.boxFooter{
+    width: 33.3%;
+        /* border: solid;
+        border-width: 1px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    
+}
+.boxFooter img{
+    width: 100%;
+    height: 100%;
+}
+
+.boxFooter a{
+    font-size: 20px;
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-weight: lighter;
+    height: auto;
+}
+
+.boxFooter p{
+    font-size: 20px;
+    text-align: center;
+}
+.minibox img{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    
+}
+.minibox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.card img{
+    width: 404px;
+    height: 404px;
+}
+.card{
+    width: 404px;
+    background-color: #caaf6f;
+}
+
+.col p{
+    font-size: 18px;
+    
+}
+
+.formLogin{
+    
+    background-color: #caaf6f;
+    width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.botonIngreso{
+    align-items: center;
+}
+.labellogin{
+    
+    margin-left: 15px;
+}
+.containerCard{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    
+}
+
+
+.cardGato img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 300px;
+    height: 300px;
+}
+.cardGato{
+    border-radius: 15px;
+    width: 300px;
+    background-color: #caaf6f;
+}
+
+.containerAgregar{
+    align-items: center;
+    background-color: #caaf6f;
+    width: fit-content;
+    border-radius: 10px;
+}
+.btn img{
+    padding-right: 3px;
+    width: 25px;
+    height: 25px;
+}
+
+.botones{
+    align-items: center;
+}
+
+.containerFoot a{
+    color: black;
+    
+   
+}
+.containerFoot a:hover{
+    color: yellowgreen;
+}
+
+.error{
+    color: red;
+    
+}

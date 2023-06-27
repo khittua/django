@@ -1,0 +1,42 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+{% block head %}
+    
+    <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+
+<form action="{% url 'v_login' %}" class="formLogin p-5" id="miFormulario" style="color: rgb(39, 39, 39);" method="POST">
+    {% csrf_token %}
+    <h3 class="mb-3">Inicio de Sesión</h3>
+    <h5 class="mb-3">( cetecom / 123 )</h3>
+    <div class="col mt-4">
+        <label for="txtUsuario">Usuario:</label>
+        <input name="username" id="txtUsuario" type="text" placeholder="Ingrese su usuario" class="form-control">
+    </div>
+    <div class="col mt-3">
+        <label for="txtContraseña">Contraseña:</label>
+        <input name="password" id="txtContraseña" type="password" placeholder="Ingrese su contraseña" class="form-control">
+    </div>
+    <div class="col mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Recordar</label>
+    </div>
+    <div class="col botonIngreso d-flex">
+        <button class="btn btn-outline-dark d-flex">Ingresar</button>
+        <a href="{% url 'v_registro' %}" style="color: black">    
+            <label class="labellogin">Aún no tienes cuenta?</label>
+        </a>
+    </div>
+</form>
+{% endblock %}
+
+
+{% block script %}
+    
+{% endblock %}

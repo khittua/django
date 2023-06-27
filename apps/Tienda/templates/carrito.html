@@ -1,0 +1,96 @@
+{% extends "./base.html" %}
+{% load humanize %}
+{% load static %}
+
+{% block head %}
+    
+    <link id="style" rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container">
+    <h3 class="m-4">Carrito de Compras</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">SUBTOTAL</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>MASCAT COLLAR</td>
+          <td>$3.315</td>
+          <td>2</td>
+          <td>$6.630</td>
+          <td>
+            
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>CATIT SENSES CATNIP</td>
+          <td>$7.900</td>
+          <td>1</td>
+          <td>$7.900</td>
+          <td> 
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Eliminar
+              </button>
+          </td>
+        </tr>
+       
+
+      </tbody>
+      
+  
+    </table>
+    <div class="botones d-flex justify-content-between">
+    <a href="index.html" class="btn btn-outline-dark mt-3" >Continuar comprando</a>
+    
+    <h6 class="mt-3" style="margin-left: 425px;">TOTAL: $14.530</h6>
+    <a href="index.html" class="btn btn-success mt-3" style="margin-right: 85px;" >Finalizar Compra</a>
+  </div>
+  </div>
+
+
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar producto</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    Esta seguro que desea eliminar el producto seleccionado?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+    <button type="button" class="btn btn-danger">Eliminar</button>
+  </div>
+</div>
+</div>
+</div>
+
+    
+{% endblock %}
+
+
+{% block script %}
+    
+{% endblock %}

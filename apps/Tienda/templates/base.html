@@ -1,0 +1,185 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    {% block head %}
+  
+    {% endblock %}
+    <title>
+      {% block title %}
+  
+      {% endblock %}
+    </title>
+</head>
+
+<header >
+
+  <div class="top d-flex p-2 justify-content-around">
+      <div class="minibox">
+
+          <a href="https://www.instagram.com"><img src="{% static 'img/ig.png' %}" alt=""></a>              
+
+          <a href="https://www.facebook.com"> <img src="{% static 'img/fb.webp' %}" alt=""></a>
+     
+          <a href="https://www.telegram.com"><img src="{% static 'img/telegram.png' %}" alt=""></a>
+          
+          <a href="https://www.twitter.com"><img src="{% static 'img/twit.webp' %}" alt=""></a>
+      </div>
+      <a href="/"><img src="{% static 'img/logo.webp' %}" alt="" style="margin-left: -100px;"></a>
+
+      <div class="horita mt-4">
+        <h3 id="hora">a</h3>
+      </div>
+  </div>
+
+  <div class="nav d-flex justify-content-between border-bottom border-warning" >
+
+  
+    <div class="vacio" style="width: 189px;">
+      <a id="toggle-theme"><img class="imgnav" src="{% static 'img/darkmode.png' %}" style="height: 50px; width: 55px; margin-left: 45px;" alt=""></a>
+    </div>
+  
+
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-center " style="background-color: transparent !important" >
+      <div class="container-fluid ">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Inicio</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tienda
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'v_perro' %}">Perros</a></li>
+                <li><a class="dropdown-item" href="{% url 'v_gato' %}">Gatos</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              
+            </li>
+          </ul>
+          <a class="navbar-brand" href="/">iNeko</a>
+          
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" >
+            
+          
+            
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+      
+    </nav>
+    <div class="carrito d-flex" >
+      
+      <a href="{% url 'v_carro' %}">
+        <img class="imgnav" src="{% static 'img/carro.png' %}" style="width: 50px; height: 50px; margin-right: 45px;">
+      </a>
+      {% if user.is_authenticated %}
+        <h5 class="m-2">{{ user.username }}</h5>
+        <a href="{% url 'v_logout' %}">
+          <img class="imgnav" src="{% static 'img/logout.png' %}" style="width: 45px; height: 45px; margin-right: 45px;">
+        </a>
+        <a href="{% url 'v_editar' %}">
+          <img class="imgnav" src="{% static 'img/admin.png' %}" style="width: 45px; height: 45px; margin-right: 45px;">
+        </a>
+      {% else %}
+      <a href="{% url 'v_login' %}">
+        <img class="imgnav" src="{% static 'img/login.png' %}" style="width: 45px; height: 45px; margin-right: 45px;">
+      </a>
+      {% endif %}
+      
+    </div>
+</div>
+    
+<div class="d-flex justify-content-between">
+<div></div>
+<h5 class="primero mt-2">¡Aprovecha hasta 35% de descuento con el código P3TL0V3R!</h5>
+<button id="ocultar" class="btn btn-outline-danger m-1">x</button>
+</div>
+
+
+</header>
+
+<body onload="load()">
+    
+
+  {% block body %}
+
+  {% endblock %}
+
+
+  <script>
+    var staticCSS = "{% static 'css/styles.css' %}";
+    var staticCSSDark = "{% static 'css/stylesdark.css' %}";
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+  <script src="{% static 'js/sjsjsj.js' %}"></script>
+
+  {% block script %}
+
+  {% endblock %}
+
+</body>
+
+<footer>
+  <div class="containerFoot text-center border-top border-warning" >
+      <div class="row pt-3">
+        <div class="col">
+          <h4>Sobre nosotros</h2>
+          <p>Bienvenido a nuestra tienda de mascotas, ¡estamos muy contentos de tenerte aquí!</p>
+          <p>En nuestra tienda, creemos en la responsabilidad social y en el compromiso con la calidad. Nos esforzamos por brindar a nuestros clientes y sus mascotas el mejor servicio posible, a través de una amplia gama de productos y servicios para mascotas de alta calidad.</p>
+        </div>
+        <div class="col">
+          <h4>Contacto</h4>
+
+          <h6>  EMAIL: </h6>
+          <p>  ecommerce@ineko.cl</p> 
+          <h6>MESA CENTRAL:</h6>
+          <p>  Whatsapp </p>
+          <h6> HORARIOS DE ATENCIÓN: </h6>
+          <p>  Lunes a Viernes <br> 08:30 a 17:30</p>
+        </div>
+        <div class="col">
+        <h4>Categorias</h4>
+        <a href="">Juguetes para Perro </a> <br>
+        <a href="">Juguetes para Gato</a><br>
+        <a href="">Accesorios</a><br>
+        <a href="">Comida</a><br>
+        <a href="">Cuidado y Salud</a>
+
+
+        </div>
+        <div class="col">
+        <h4>Info. Adicional.</h4>
+        <a href="">Quienes somos</a> <br>
+        <a href="">ubicación</a> <br>
+        <a href="">Terminos y condiciones</a>
+        </div>
+      </div>
+    </div>
+    
+</footer>
+</html>
